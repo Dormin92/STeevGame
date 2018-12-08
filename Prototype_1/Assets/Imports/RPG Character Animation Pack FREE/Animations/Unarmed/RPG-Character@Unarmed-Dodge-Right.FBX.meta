@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: bf3762a0f871d634e88e548ddc36246d
+guid: f9fd6d02b75d124499e3466b5334dc66
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: B_Head
     100002: B_L_Calf
@@ -120,10 +120,12 @@ ModelImporter:
     9500000: //RootNode
     13700000: RPG-Character-Mesh
     2186277476908879412: ImportLogs
+  externalObjects: {}
   materials:
     importMaterials: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -136,26 +138,19 @@ ModelImporter:
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\n\t'B_Spine2' is inbetween humanoid transforms
       and has rotation animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftUpperArm
-      average position error 24.4 mm and maximum position error 37.8 mm at time 0:
-      3 (15.0%) Frame 3\n\tLeftLowerArm average position error 17.2 mm and maximum
-      position error 31.3 mm at time 0: 3 (15.0%) Frame 3\n\tLeftHand average position
-      error 13.9 mm and maximum position error 26.1 mm at time 0:17 (85.0%) Frame
-      17\n\tRightUpperArm average position error 30.6 mm and maximum position error
-      50.3 mm at time 0: 3 (15.0%) Frame 3\n\tRightLowerArm average position error
-      20.7 mm and maximum position error 40.7 mm at time 0: 3 (15.0%) Frame 3\n\tRightHand
-      average position error 24.2 mm and maximum position error 38.1 mm at time 0:
-      2 (10.0%) Frame 2\n\tHead average position error 75.7 mm and maximum position
-      error 121.3 mm at time 0: 3 (15.0%) Frame 3\n\tRightFoot average orientation
-      error 0.1 deg and maximum orientation error 0.6 deg at time 0: 2 (10.0%) Frame
-      2\n"
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tRightFoot
+      average orientation error 0.1 deg and maximum orientation error 0.6 deg at time
+      0: 2 (10.0%) Frame 2\n"
     animationDoRetargetingWarnings: 1
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: Unarmed-Dodge-Right
@@ -301,13 +296,18 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    importVisibility: 0
     importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 0
     keepQuads: 0
     weldVertices: 0
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -317,6 +317,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 2
     tangentImportMode: 2
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 1
   humanDescription:

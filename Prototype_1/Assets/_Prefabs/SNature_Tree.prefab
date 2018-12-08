@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4116367557794372}
   - component: {fileID: 33156715673735098}
   - component: {fileID: 23376039774231560}
+  - component: {fileID: 136692266908734554}
   m_Layer: 0
   m_Name: SNature_Tree
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1051549096119824}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.261375, y: -1.1259623, z: 1.7331736}
+  m_LocalPosition: {x: 40.09262, y: -0.064186215, z: 1.3411751}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +84,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1051549096119824}
   m_Mesh: {fileID: 4300000, guid: e17007e913fabaf409c5fa6cc0b3d052, type: 3}
+--- !u!136 &136692266908734554
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1051549096119824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.72
+  m_Height: 17.683475
+  m_Direction: 1
+  m_Center: {x: -0.01, y: 7.81, z: 0.07}
