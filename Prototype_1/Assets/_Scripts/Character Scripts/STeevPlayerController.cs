@@ -9,6 +9,8 @@ public class STeevPlayerController : MonoBehaviour
     Animator Animator;
     IEnumerator coroutine;
     private AudioSource Oof;
+    private bool isDead = false;
+    public bool hittingEnemy;
 
     private void Start()
     {
@@ -20,7 +22,7 @@ public class STeevPlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //currently have two colliders on brute's fists, and brute's fists tagged as 'enemy'. Pretty ugly spaghetti. Find cleaner way.
-        if (other.gameObject.tag == "Enemy" && !Invincible)
+        if (other.gameObject.tag == "Enemy" && !Invincible && HealthPoints > 0)
         {
             if (Blocking)
             {
@@ -35,18 +37,26 @@ public class STeevPlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Dodge"))
+        if (Input.GetButtonDown("Dodge") && !isDead)
         {
             DodgeRoll();
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !isDead)
         {
             Attack_1();
         }
 
+        if(HealthPoints < 1 && !isDead)
+        {
+            Animator.SetTrigger("Death");
+            isDead = true;
+        }
+
+        
         Blocking = Input.GetButton("Block");
     }
+
 
     //function activates trigger to play the animation for player taking damage. Also activates invincibility frames.
     void GetHit(int damage)

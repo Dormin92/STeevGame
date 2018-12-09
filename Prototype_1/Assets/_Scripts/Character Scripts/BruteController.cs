@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 //class for controlling behaviour and animations of the brute
 public class BruteController : MonoBehaviour
 {
@@ -10,6 +12,15 @@ public class BruteController : MonoBehaviour
     public float AttackCooldown = 2f;
     private bool AttackCooldownCheck;
     private IEnumerator coroutine;
+
+
+
+
+
+
+
+
+
 
     private void Start()
     {

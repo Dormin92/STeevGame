@@ -133,13 +133,59 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: Motion
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Errors found in
+      old project file will be treated as a warnings. Configuration mis-match will
+      be ignored, but current Configuration needs to be fixed:\n\tTransform 'B_Spine2'
+      not found in HumanDescription.\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\n\t'B_Spine2' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tRetargeting
-      quality is good. No significant differences with original animation were found.\n"
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'B_Spine' has translation animation that will
+      be discarded.\n\t'B_Spine1' has translation animation that will be discarded.\n\t'B_Spine2'
+      has translation animation that will be discarded.\n\t'B_Spine2' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'B_L_Clavicle'
+      has translation animation that will be discarded.\n\t'B_L_UpperArm' has translation
+      animation that will be discarded.\n\t'B_L_Forearm' has translation animation
+      that will be discarded.\n\t'B_L_Hand' has translation animation that will be
+      discarded.\n\t'B_L_Finger0' has translation animation that will be discarded.\n\t'B_L_Finger01'
+      has translation animation that will be discarded.\n\t'B_L_Finger02' has translation
+      animation that will be discarded.\n\t'B_L_Finger1' has translation animation
+      that will be discarded.\n\t'B_L_Finger11' has translation animation that will
+      be discarded.\n\t'B_L_Finger12' has translation animation that will be discarded.\n\t'B_L_Finger2'
+      has translation animation that will be discarded.\n\t'B_L_Finger21' has translation
+      animation that will be discarded.\n\t'B_L_Finger22' has translation animation
+      that will be discarded.\n\t'B_L_Finger3' has translation animation that will
+      be discarded.\n\t'B_L_Finger31' has translation animation that will be discarded.\n\t'B_L_Finger32'
+      has translation animation that will be discarded.\n\t'B_L_Finger4' has translation
+      animation that will be discarded.\n\t'B_L_Finger41' has translation animation
+      that will be discarded.\n\t'B_L_Finger42' has translation animation that will
+      be discarded.\n\t'B_R_Clavicle' has translation animation that will be discarded.\n\t'B_R_UpperArm'
+      has translation animation that will be discarded.\n\t'B_R_Forearm' has translation
+      animation that will be discarded.\n\t'B_R_Hand' has translation animation that
+      will be discarded.\n\t'B_R_Finger0' has translation animation that will be discarded.\n\t'B_R_Finger01'
+      has translation animation that will be discarded.\n\t'B_R_Finger02' has translation
+      animation that will be discarded.\n\t'B_R_Finger1' has translation animation
+      that will be discarded.\n\t'B_R_Finger11' has translation animation that will
+      be discarded.\n\t'B_R_Finger12' has translation animation that will be discarded.\n\t'B_R_Finger2'
+      has translation animation that will be discarded.\n\t'B_R_Finger21' has translation
+      animation that will be discarded.\n\t'B_R_Finger22' has translation animation
+      that will be discarded.\n\t'B_R_Finger3' has translation animation that will
+      be discarded.\n\t'B_R_Finger31' has translation animation that will be discarded.\n\t'B_R_Finger32'
+      has translation animation that will be discarded.\n\t'B_R_Finger4' has translation
+      animation that will be discarded.\n\t'B_R_Finger41' has translation animation
+      that will be discarded.\n\t'B_R_Finger42' has translation animation that will
+      be discarded.\n\t'B_Neck' has translation animation that will be discarded.\n\t'B_Head'
+      has translation animation that will be discarded.\n\t'B_L_Thigh' has translation
+      animation that will be discarded.\n\t'B_L_Calf' has translation animation that
+      will be discarded.\n\t'B_L_Foot' has translation animation that will be discarded.\n\t'B_L_Toe0'
+      has translation animation that will be discarded.\n\t'B_R_Thigh' has translation
+      animation that will be discarded.\n\t'B_R_Calf' has translation animation that
+      will be discarded.\n\t'B_R_Foot' has translation animation that will be discarded.\n\t'B_R_Toe0'
+      has translation animation that will be discarded.\n"
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftFoot
+      average orientation error 7.6 deg and maximum orientation error 15.8 deg at
+      time 0: 4 (40.0%) Frame 4\n\tRightFoot average orientation error 10.6 deg and
+      maximum orientation error 18.4 deg at time 0: 7 (70.0%) Frame 7\n"
     animationDoRetargetingWarnings: 1
     importAnimatedCustomProperties: 0
     importConstraints: 0
@@ -1010,12 +1056,12 @@ ModelImporter:
     foreArmTwist: 1
     upperLegTwist: 1
     legTwist: 1
-    armStretch: 0.05
+    armStretch: 1
     legStretch: 0
     feetSpacing: 0
     rootMotionBoneName: PositionLocator
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
-    hasTranslationDoF: 1
+    hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: e42d9259129992a4d95e0b320ca2a43d,
