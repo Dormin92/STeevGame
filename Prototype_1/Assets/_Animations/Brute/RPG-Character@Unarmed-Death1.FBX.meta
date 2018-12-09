@@ -133,14 +133,57 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: Motion
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Errors found in
+      old project file will be treated as a warnings. Configuration mis-match will
+      be ignored, but current Configuration needs to be fixed:\n\tTransform 'B_Spine2'
+      not found in HumanDescription.\nCopied Avatar Rig Configuration mis-match. Bone
+      length in copied configuration does not match position in animation file:\n\t'B_L_Thigh'
+      : position error = 13478.962891 mm\n\t'B_L_Calf' : position error = 10184.538086
+      mm\n\t'B_L_Foot' : position error = 9861.823242 mm\n\t'B_L_Toe0' : position
+      error = 20467.943359 mm\n\t'B_R_Thigh' : position error = 13478.971680 mm\n\t'B_R_Calf'
+      : position error = 10184.543945 mm\n\t'B_R_Foot' : position error = 9861.845703
+      mm\n\t'B_R_Toe0' : position error = 20467.939453 mm\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\n\t'B_Spine2' has translation animation that
-      will be discarded.\n\t'B_Spine2' is inbetween humanoid transforms and has rotation
-      animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tRetargeting
-      quality is good. No significant differences with original animation were found.\n"
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'B_Spine' has translation animation that will
+      be discarded.\n\t'B_Spine1' has translation animation that will be discarded.\n\t'B_Spine2'
+      has translation animation that will be discarded.\n\t'B_Spine2' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'B_L_Forearm'
+      has translation animation that will be discarded.\n\t'B_L_Hand' has translation
+      animation that will be discarded.\n\t'B_L_Finger02' has translation animation
+      that will be discarded.\n\t'B_L_Finger1' has translation animation that will
+      be discarded.\n\t'B_L_Finger12' has translation animation that will be discarded.\n\t'B_L_Finger2'
+      has translation animation that will be discarded.\n\t'B_L_Finger42' has translation
+      animation that will be discarded.\n\t'B_R_Forearm' has translation animation
+      that will be discarded.\n\t'B_R_Hand' has translation animation that will be
+      discarded.\n\t'B_R_Finger1' has translation animation that will be discarded.\n\t'B_R_Finger2'
+      has translation animation that will be discarded.\n\t'B_R_Finger3' has translation
+      animation that will be discarded.\n\t'B_R_Finger4' has translation animation
+      that will be discarded.\n\t'B_Neck' has translation animation that will be discarded.\n\t'B_L_Foot'
+      has translation animation that will be discarded.\n\t'B_R_Calf' has translation
+      animation that will be discarded.\n\t'B_R_Foot' has translation animation that
+      will be discarded.\n"
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftLowerLeg
+      average position error 18388.9 mm and maximum position error 19924.6 mm at time
+      0: 1 (2.6%) Frame 1\n\tLeftFoot average position error 26305.7 mm and maximum
+      position error 28050.6 mm at time 0:28 (71.8%) Frame 28\n\tRightLowerLeg average
+      position error 19639.9 mm and maximum position error 21350.2 mm at time 0: 6
+      (15.4%) Frame 6\n\tRightFoot average position error 26320.7 mm and maximum position
+      error 27922.9 mm at time 0: 2 (5.1%) Frame 2\n\tLeftUpperArm average position
+      error 55717.4 mm and maximum position error 64656.2 mm at time 0:29 (74.4%)
+      Frame 29\n\tLeftLowerArm average position error 61933.8 mm and maximum position
+      error 75047.2 mm at time 0:29 (74.4%) Frame 29\n\tLeftHand average position
+      error 64881.0 mm and maximum position error 84112.6 mm at time 0:28 (71.8%)
+      Frame 28\n\tRightUpperArm average position error 58573.0 mm and maximum position
+      error 63146.5 mm at time 1: 0 (76.9%) Frame 30\n\tRightLowerArm average position
+      error 60138.9 mm and maximum position error 69380.7 mm at time 0:20 (51.3%)
+      Frame 20\n\tRightHand average position error 61998.7 mm and maximum position
+      error 75900.1 mm at time 0:19 (48.7%) Frame 19\n\tHead average position error
+      35852.8 mm and maximum position error 43951.4 mm at time 0:23 (59.0%) Frame
+      23\n\tLeftFoot average orientation error 14.7 deg and maximum orientation error
+      44.2 deg at time 1: 0 (76.9%) Frame 30\n\tRightFoot average orientation error
+      15.7 deg and maximum orientation error 46.0 deg at time 0:28 (71.8%) Frame 28\n"
     animationDoRetargetingWarnings: 1
     importAnimatedCustomProperties: 0
     importConstraints: 0
@@ -1011,12 +1054,12 @@ ModelImporter:
     foreArmTwist: 1
     upperLegTwist: 1
     legTwist: 1
-    armStretch: 0.05
+    armStretch: 1
     legStretch: 0
     feetSpacing: 0
     rootMotionBoneName: PositionLocator
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
-    hasTranslationDoF: 1
+    hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: e42d9259129992a4d95e0b320ca2a43d,
