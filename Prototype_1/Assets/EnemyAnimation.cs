@@ -14,6 +14,8 @@ public class EnemyAnimation : MonoBehaviour {
 
 	public Transform target;					// Destination of the agent.
 
+    public bool isDead = false;
+
 	void Awake ()
 	{
 		// Setting up the references.
@@ -36,18 +38,20 @@ public class EnemyAnimation : MonoBehaviour {
 	{
 		if(target != null)
 		{
-            //TODO: Set the destination of the NavMesh agent to the position of the target.
-            nav.SetDestination(target.position);
+            if (!isDead)
+            {
+                //TODO: Set the destination of the NavMesh agent to the position of the target.
+                nav.SetDestination(target.position);
 
-			// Create the parameters to pass to the helper function.
-			float speed = 0;
-			float angularSpeed = 0;
-			DetermineAnimParameters (out speed, out angularSpeed);
+                // Create the parameters to pass to the helper function.
+                float speed = 0;
+                float angularSpeed = 0;
+                DetermineAnimParameters(out speed, out angularSpeed);
 
-			//Set the values of the parameters to the animator.
-			anim.SetFloat("Speed", speed, speedDampTime, Time.deltaTime);
-            //anim.SetFloat("Angular Speed", angularSpeed, angularSpeedDampTime, Time.deltaTime);
-
+                //Set the values of the parameters to the animator.
+                anim.SetFloat("Speed", speed, speedDampTime, Time.deltaTime);
+                //anim.SetFloat("Angular Speed", angularSpeed, angularSpeedDampTime, Time.deltaTime);
+            }
 		}
 	}
 	
@@ -109,7 +113,17 @@ public class EnemyAnimation : MonoBehaviour {
 
     public void Attack()
     {
-        StartCoroutine("AttackAnim");
+        if(!isDead)
+            StartCoroutine("AttackAnim");
+    }
+
+    public void DeathAnimation()
+    {
+        if (!isDead)
+        {
+            anim.SetTrigger("Death");
+            isDead = true;
+        }
     }
 
     private IEnumerator AttackAnim()

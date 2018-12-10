@@ -10,7 +10,7 @@ public enum Transition
 	NullTransition = 0, // Use this transition to represent a non-existing transition in your system
 	SawPlayer = 1,
 	LostPlayer = 2,
-    AttackPlayer = 3,
+    Dead = 3,
 }
 
 /// <summary>
@@ -22,7 +22,7 @@ public enum StateID
 	NullStateID = 0, // Use this ID to represent a non-existing State in your system
 	PatrollingID = 1,
 	ChasingPlayerID = 2,
-    AttackingPlayerID = 3,
+    DeathID = 3,
 }
 
 public class EnemyBehaviour : MonoBehaviour
@@ -51,10 +51,13 @@ public class EnemyBehaviour : MonoBehaviour
         patrol.AddTransition(Transition.SawPlayer, StateID.ChasingPlayerID);
 		ChasePlayerState chase = new ChasePlayerState(gameObject, player);
         chase.AddTransition(Transition.LostPlayer, StateID.PatrollingID);
+        chase.AddTransition(Transition.Dead, StateID.DeathID);
+        DeathState death = new DeathState(gameObject);
 
 		fsm = new FSMSystem();
         fsm.AddState(patrol);
         fsm.AddState(chase);
+        fsm.AddState(death);
 	}
 
 	public void SetTransition(Transition t) { fsm.PerformTransition(t); }
@@ -154,18 +157,49 @@ public class ChasePlayerState : FSMState
             //TODO: Make a transition using Transition.LostPlayer.
             npc.GetComponent<EnemyBehaviour>().fsm.PerformTransition(Transition.LostPlayer);
         }
+        if (npc.GetComponent<EnemyBehaviour>().healthPoints < 0)
+        {
+            Debug.Log("He dead, gun'nor");
+            npc.GetComponent<EnemyBehaviour>().fsm.PerformTransition(Transition.Dead);
+        }
 	}
 	
 	public override void Act(GameObject player, GameObject npc)
 	{
+        if (!npc.GetComponent<EnemyAnimation>().isDead)
+        {
+            //TODO: Program the Chase State Act. It should chase the player's position until being 
+            //  at a distance less than 'stopDist'. You can use the methods from EnemyAnimation.
+            if (Vector3.Distance(npc.transform.position, player.transform.position) > stopDist)
+                npc.GetComponent<EnemyAnimation>().setTarget(player.transform, chaseSpeed);
+            else
+                npc.GetComponent<EnemyAnimation>().Attack();
+        }
+	}	
+}
+
+public class DeathState : FSMState
+{
+    private EnemyAnimation enemyAnimation;
+
+    public DeathState(GameObject thisObject)
+    {
+        stateID = StateID.DeathID;
+        enemyAnimation = thisObject.GetComponent<EnemyAnimation>();
+    }
+
+    public override void Reason(GameObject player, GameObject npc)
+    {
+        //no transition out of this state
+    }
+
+    public override void Act(GameObject player, GameObject npc)
+    {
         //TODO: Program the Chase State Act. It should chase the player's position until being 
         //  at a distance less than 'stopDist'. You can use the methods from EnemyAnimation.
-        if (Vector3.Distance(npc.transform.position, player.transform.position) > stopDist)
-            npc.GetComponent<EnemyAnimation>().setTarget(player.transform, chaseSpeed);
-        else
-            npc.GetComponent<EnemyAnimation>().Attack();
+        npc.GetComponent<EnemyAnimation>().DeathAnimation();
 
-	}	
+    }
 }
 
 
