@@ -39,7 +39,8 @@ public class EnemyBehaviour : MonoBehaviour
 	// Use this for initialization
 	void Start () {
 		MakeFSM();
-	}
+        healthPoints = healthPoints * (PlayerPrefs.GetInt("Difficulty") + 1);
+    }
 
 	private void MakeFSM()
 	{
