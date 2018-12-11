@@ -15,6 +15,8 @@ public class EnemyAnimation : MonoBehaviour {
 	public Transform target;					// Destination of the agent.
 
     public bool isDead = false;
+    public bool isAttacking = false;
+    public GameObject[] fists;
 
 	void Awake ()
 	{
@@ -68,14 +70,11 @@ public class EnemyAnimation : MonoBehaviour {
 	
 	void DetermineAnimParameters (out float speed, out float angularSpeed)
 	{
-		// TODO: Set the speed to the magnitude of the projection of nav.desiredVelocity on to the forward vector...
 		speed = Vector3.Magnitude(Vector3.Project(nav.desiredVelocity, transform.forward));
 
-		// Set the angle to the angle between forward and the desired velocity.
 		float angle = FindAngle(transform.forward, nav.desiredVelocity, transform.up);
 
         transform.Rotate(Vector3.up, angle);
-        // If the angle is within the deadZone...
 		
 		angularSpeed = (angle * Mathf.Deg2Rad) / angleResponseTime;
 	}
@@ -83,18 +82,13 @@ public class EnemyAnimation : MonoBehaviour {
 	
 	float FindAngle (Vector3 fromVector, Vector3 toVector, Vector3 upVector)
 	{
-		
-		// Create a float to store the angle between the facing of the enemy and the direction it's travelling.
+	
 		float angle = 0;
 
-		// If the vector the angle is being calculated to is 0...
+
 		if(toVector == Vector3.zero)
-			// ... the angle between them is 0.
 			return 0f;
 
-        //TODO: Return the angle, in radians, between fromVector and toVector;
-        // NOTE that Vector3.Angle returns the ACUTE angle between the two vectors 
-        //   (this is: the smaller of the two possible angles between them and never greater than 180 degrees)
         angle = Vector3.SignedAngle(fromVector, toVector, Vector3.up);
         return angle;
 
@@ -119,7 +113,7 @@ public class EnemyAnimation : MonoBehaviour {
 
     public void DeathAnimation()
     {
-        if (!isDead)
+        if (!isDead && !isAttacking)
         {
             anim.SetTrigger("Death");
             isDead = true;
@@ -128,7 +122,14 @@ public class EnemyAnimation : MonoBehaviour {
 
     private IEnumerator AttackAnim()
     {
-        yield return new WaitForSeconds(1.5f);
+        isAttacking = true;
+        fists[0].GetComponent<Collider>().enabled = true;
+        fists[1].GetComponent<Collider>().enabled = true;
         anim.SetTrigger("AttackTrigger");
+        yield return new WaitForSeconds(1.15f);
+        fists[0].GetComponent<Collider>().enabled = false;
+        fists[1].GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(1.5f);
+        isAttacking = false;
     }
 }
